@@ -44,4 +44,15 @@ class HelloTest {
         var map = mapOf("a" to 1, "b" to 2, "c" to 3)
         println(map)
     }
+
+    @Test
+    fun stringLiteral() {
+        val text = """
+            a
+            b
+            c
+        """
+
+        println(text)
+    }
 }
