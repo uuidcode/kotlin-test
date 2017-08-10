@@ -29,6 +29,7 @@ class HelloTest {
     @Test
     fun lambda() {
         var list = listOf("abc", "bcd", "afg")
+
         list.filter {
             it.startsWith("a")
         }.map {
@@ -36,5 +37,11 @@ class HelloTest {
         }.forEach {
             println(it)
         }
+    }
+
+    @Test
+    fun mapOf() {
+        var map = mapOf("a" to 1, "b" to 2, "c" to 3)
+        println(map)
     }
 }
