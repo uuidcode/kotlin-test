@@ -8,7 +8,7 @@ import org.junit.platform.runner.JUnitPlatform
 import org.junit.runner.RunWith
 
 @RunWith(JUnitPlatform::class)
-class HelloKtSpek : Spek({
+class HelloSpek : Spek({
     describe("a calculator") {
         val hello = Hello()
 

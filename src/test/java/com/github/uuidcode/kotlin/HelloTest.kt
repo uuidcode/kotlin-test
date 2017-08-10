@@ -3,7 +3,7 @@ package com.github.uuidcode.kotlin
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Test
 
-class HelloKtTest {
+class HelloTest {
     @Test
     fun test() {
         var hello = Hello()
