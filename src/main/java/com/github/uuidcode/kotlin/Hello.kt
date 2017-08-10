@@ -5,10 +5,22 @@ fun main(args: Array<String>) {
 }
 
 class Hello {
-    constructor() {
+    fun test(): String {
+        return "Hello, World!"
     }
 
-    fun test() : String {
-        return "Hello, World!"
+    fun sum(a: Int, b: Int = 0): Int {
+        return a + b;
+    }
+
+    fun sum() : Unit {
+    }
+
+    fun listOf() {
+        var list = listOf("a", "b", "c")
+
+        for (item in list) {
+            println(item)
+        }
     }
 }

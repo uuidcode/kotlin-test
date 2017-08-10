@@ -8,5 +8,33 @@ class HelloTest {
     fun test() {
         var hello = Hello()
         assertThat(hello.test()).isEqualTo("Hello, World!")
+
+        assertThat(hello.sum(1)).isEqualTo(1)
+        assertThat(hello.sum(1, 2)).isEqualTo(3)
+    }
+
+    @Test
+    fun interpolate() {
+        var message = "Hello, World!"
+        var formatMessage = "${message}"
+        assertThat(formatMessage).isEqualTo(message)
+    }
+
+    @Test
+    fun listOf() {
+        var hello = Hello()
+        hello.listOf()
+    }
+
+    @Test
+    fun lambda() {
+        var list = listOf("abc", "bcd", "afg")
+        list.filter {
+            it.startsWith("a")
+        }.map {
+            it.toUpperCase()
+        }.forEach {
+            println(it)
+        }
     }
 }
