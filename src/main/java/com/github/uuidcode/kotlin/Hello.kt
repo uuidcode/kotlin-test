@@ -4,6 +4,10 @@ fun main(args: Array<String>) {
     println("Hello, World")
 }
 
+fun mapOf() {
+
+}
+
 class Hello {
     fun test(): String {
         return "Hello, World!"
