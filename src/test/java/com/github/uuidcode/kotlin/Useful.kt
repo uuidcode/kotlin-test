@@ -51,4 +51,31 @@ class Useful {
         println(customer)
         println(newCustomer)
     }
+
+    @Test
+    fun copy() {
+        var customer = Customer("uuidcode", "uuidcode@gmail.com")
+        var newCustomer = customer.copy(age = 2000)
+
+        println(customer)
+        println(newCustomer)
+    }
+
+    @Test
+    fun destructing() {
+        var customer = Customer("uuidcode", "uuidcode@gmail.com")
+        var (name, email, age) = customer
+
+        println(name)
+        println(email)
+        println(age)
+    }
+
+    @Test
+    fun componentN() {
+        var customer = Customer("uuidcode", "uuidcode@gmail.com")
+        println(customer.component1())
+        println(customer.component2())
+        println(customer.component3())
+    }
 }
