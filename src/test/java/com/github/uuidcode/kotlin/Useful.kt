@@ -26,7 +26,7 @@ class Useful {
             age = 10
         }
 
-        println(customer)
+        assertThat(customer.age).isEqualTo(10)
     }
 
     @Test
@@ -38,8 +38,8 @@ class Useful {
             1
         }
 
-        println(customer)
-        println(result)
+        assertThat(customer.age).isEqualTo(100)
+        assertThat(result).isEqualTo(1)
     }
 
     @Test
@@ -49,8 +49,9 @@ class Useful {
             age = 1000;
         }
 
-        println(customer)
-        println(newCustomer)
+        assertThat(newCustomer.name).isEqualTo(customer.name)
+        assertThat(newCustomer.email).isEqualTo(customer.email)
+        assertThat(newCustomer.age).isEqualTo(1000)
     }
 
     @Test
