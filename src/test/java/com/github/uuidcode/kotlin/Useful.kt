@@ -8,7 +8,7 @@ class Useful {
     fun let() {
         var list = listOf("a", "b", "c")
         list.let {
-            println(it)
+            assertThat(it.toString()).isEqualTo("[a, b, c]")
 
             it.forEach {
                 println (it)
@@ -20,7 +20,8 @@ class Useful {
     fun with() {
         var customer = Customer("uuidcode", "uuidcode@gmail.com")
 
-        println(customer)
+        assertThat(customer.name).isEqualTo("uuidcode")
+        assertThat(customer.email).isEqualTo("uuidcode@gmail.com")
 
         with (customer) {
             age = 10
