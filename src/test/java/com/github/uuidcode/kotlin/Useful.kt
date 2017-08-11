@@ -7,6 +7,7 @@ class Useful {
     @Test
     fun let() {
         var list = listOf("a", "b", "c")
+
         list.let {
             assertThat(it.toString()).isEqualTo("[a, b, c]")
 
@@ -47,7 +48,7 @@ class Useful {
     fun apply() {
         var customer = Customer("uuidcode", "uuidcode@gmail.com")
         var newCustomer = customer.apply {
-            age = 1000;
+            age = 1000
         }
 
         assertThat(newCustomer.name).isEqualTo(customer.name)

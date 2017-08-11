@@ -7,10 +7,19 @@ class BlockTest {
         block.invoke()
     }
 
+    fun execute(block : (name : String) -> String, name : String) {
+        println(block(name))
+    }
+
+
     @Test
     fun executeTest() {
         execute {
             println("OK")
         }
+
+        execute({
+            it + it
+        }, "hello")
     }
 }
