@@ -1,5 +1,6 @@
 package com.github.uuidcode.kotlin
 
+import org.assertj.core.api.Assertions.assertThat
 import org.junit.Test
 
 class BlockTest {
@@ -7,8 +8,8 @@ class BlockTest {
         block.invoke()
     }
 
-    fun execute(block : (name : String) -> String, name : String) {
-        println(block(name))
+    fun execute(block : (name : String) -> String, name : String) : String {
+        return block(name)
     }
 
 
@@ -18,8 +19,7 @@ class BlockTest {
             println("OK")
         }
 
-        execute({
-            it + it
-        }, "hello")
+        var result = execute({ it + it }, "Hello")
+        assertThat(result).isEqualTo("HelloHello")
     }
 }
