@@ -1,5 +1,6 @@
 package com.github.uuidcode.kotlin
 
+import org.assertj.core.api.Assertions.assertThat
 import org.junit.Test
 
 class Useful {
@@ -57,8 +58,9 @@ class Useful {
         var customer = Customer("uuidcode", "uuidcode@gmail.com")
         var newCustomer = customer.copy(age = 2000)
 
-        println(customer)
-        println(newCustomer)
+        assertThat(newCustomer.name).isEqualTo(customer.name)
+        assertThat(newCustomer.email).isEqualTo(customer.email)
+        assertThat(newCustomer.age).isEqualTo(2000)
     }
 
     @Test
@@ -66,16 +68,16 @@ class Useful {
         var customer = Customer("uuidcode", "uuidcode@gmail.com")
         var (name, email, age) = customer
 
-        println(name)
-        println(email)
-        println(age)
+        assertThat(name).isEqualTo(customer.name)
+        assertThat(email).isEqualTo(customer.email)
+        assertThat(age).isEqualTo(customer.age)
     }
 
     @Test
     fun componentN() {
         var customer = Customer("uuidcode", "uuidcode@gmail.com")
-        println(customer.component1())
-        println(customer.component2())
-        println(customer.component3())
+        assertThat(customer.component1()).isEqualTo(customer.name)
+        assertThat(customer.component2()).isEqualTo(customer.email)
+        assertThat(customer.component3()).isEqualTo(customer.age)
     }
 }
