@@ -12,13 +12,13 @@ class LambdaTest {
         return function.invoke(a, b, c, d)
     }
 
-    fun example(a : Int, b : String, c : String, d : Boolean) : Int{
+    fun algorithm(a : Int, b : String, c : String, d : Boolean) : Int{
         return 1;
     }
 
     @Test
     fun test() {
         var lambdaTest = LambdaTest()
-        assertThat(test(lambdaTest::example, 1, "2", "3", true)).isEqualTo(1)
+        assertThat(test(lambdaTest::algorithm, 1, "2", "3", true)).isEqualTo(1)
     }
 }
