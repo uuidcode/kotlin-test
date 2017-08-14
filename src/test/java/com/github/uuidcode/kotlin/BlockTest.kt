@@ -12,7 +12,6 @@ class BlockTest {
         return block(name)
     }
 
-
     @Test
     fun executeTest() {
         execute {
@@ -22,4 +21,19 @@ class BlockTest {
         var result = execute({ it + it }, "Hello")
         assertThat(result).isEqualTo("HelloHello")
     }
+
+    @Test
+    fun functionLiteralsWithReciver() {
+        var greetString: String.(String) -> Unit = {
+            println("Hello $this $it")
+        }
+
+        var greetInt: Int.() -> Unit = {
+            println("Hello $this")
+        }
+
+        "abc".greetString("!!")
+        1.greetInt()
+    }
+
 }
