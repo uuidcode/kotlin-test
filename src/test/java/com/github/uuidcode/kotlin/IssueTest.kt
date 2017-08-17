@@ -25,10 +25,13 @@ class IssueTest {
                 .add(KotlinJsonAdapterFactory())
                 .add(Date::class.java, Rfc3339DateJsonAdapter().nullSafe())
                 .build()
-        val issueAdapter = moshi.adapter(Issue::class.java)
+        val issueAdapter = moshi.adapter(Issue::class.java).indent("    ")
         val issue = issueAdapter.fromJson(issueJson)
 
         assertThat(issue?.title).isEqualTo("ByteString CharSequence idea")
         assertThat(issue?.state).isEqualTo("open")
+
+        var currentIssue = Issue("test", 1, 2, "3", "4", 5, Date(), Date(), "test")
+        print(issueAdapter.toJson(currentIssue))
     }
 }
